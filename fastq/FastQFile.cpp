@@ -530,6 +530,7 @@ bool FastQFile::validateSequenceIdentifierLine()
            // Check to see if the sequenceIdentifier is a repeat by adding
            // it to the set and seeing if it already existed.
            std::pair<std::map<std::string, unsigned int>::iterator,bool> insertResult;
+	   /*
            insertResult = 
                myIdentifierMap.insert(std::make_pair(mySequenceIdentifier.c_str(), 
                                                      myLineNum));
@@ -546,6 +547,7 @@ bool FastQFile::validateSequenceIdentifierLine()
                reportErrorOnLine();
                return(false);
            }
+	   */
        }
    }
 
