@@ -1390,24 +1390,7 @@ int String::vprintf(const char * format, va_list ap)
 
 void String::check_vsnprintf()
 {
-    if (vsnprintfChecked == VSNPRINTF_NOT_CHECKED)
-    {
-        char temp[100];
-
-        memset(temp, 0, 100);
-        int check = snprintf(temp, 5, "%5s", "VSNPRINTF");
-
-        if (temp[6] != 0 || temp[7] != 0 || (check != 9 && check != -1))
-            /*
-            error("This program requires a working version of vsnprintf\n"
-                  "However, vsnprintf in the current library seems buggy\n\n"
-                  "Recompiling this program with the -D__REPLACE_SNPRINTF__ flag\n"
-                  "may solve this problem.\n\n");
-            */
-            vsnprintfChecked = VSNPRINTF_NOT_OK;
-        else
-            vsnprintfChecked = VSNPRINTF_IS_OK;
-    }
+  vsnprintfChecked = VSNPRINTF_NOT_OK;
 }
 
 int String::vcatprintf(const char * format, va_list ap)
