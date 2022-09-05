@@ -23,7 +23,7 @@
 #include "BgzfFileType.h"
 
 // Default to require the EOF block at the end of the file.
-bool BgzfFileType::ourRequireEofBlock = true;
+bool BgzfFileType::ourRequireEofBlock = false;
 
 BgzfFileType::BgzfFileType(const char * filename, const char * mode)
 {
